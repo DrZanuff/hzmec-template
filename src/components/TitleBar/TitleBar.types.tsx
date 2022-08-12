@@ -1,3 +1,4 @@
 export interface TitleBarProps {
-  value?: string
+  title: string
+  url?: string
 }
