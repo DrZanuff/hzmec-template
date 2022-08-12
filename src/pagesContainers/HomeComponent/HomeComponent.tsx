@@ -1,11 +1,15 @@
+import { TitleBar } from '../../components/TitleBar'
+import { PageBlock } from '../../components/PageBlock'
 import type { HomeComponentProps } from './HomeComponent.types'
 import * as S from './HomeComponent.styles'
-// import Link from 'next/link
 
 export function HomeComponent({ value }: HomeComponentProps) {
   return (
     <S.HomeComponentContainer>
-      <h1>Oi</h1>
+      <PageBlock gap={30} marginTop={20}>
+        <TitleBar title="ULTIMOS POSTS" />
+        <TitleBar title="ULTIMOS POSTS" url="/" />
+      </PageBlock>
     </S.HomeComponentContainer>
   )
 }
