@@ -24,3 +24,76 @@ a {
     background: black;
   }
 }
+
+@font-face {
+  font-family: Roboto;
+  src: local(Roboto),
+    url(../public/fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: local(Roboto),
+    url(../public/fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RobotoCondensed;
+  src: local(RobotoCondensed),
+    url(../public/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf)
+      format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: RobotoCondensed;
+  src: local(RobotoCondensed),
+    url(../public/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf)
+      format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: normal;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: RobotoCondensed-Light;
+  src: local(RobotoCondensed),
+    url(../public/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf)
+      format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Ubuntu;
+  src: local(Ubuntu),
+    url(../public/fonts/Ubuntu/Ubuntu-Regular.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: BebasNeue;
+  src: local(BebasNeue),
+    url(../public/fonts/Bebas_Neue/BebasNeue-Regular.ttf) format('truetype');
+  /* other formats include: 'woff2', 'truetype, 'opentype',
+                            'embedded-opentype', and 'svg' */
+  font-weight: normal;
+  font-style: normal;
+}
