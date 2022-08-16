@@ -5,7 +5,8 @@ import Link from 'next/link'
 export function FooterLink({ text, path, icon }: FooterLinkProps) {
   return (
     <S.FooterLinkContainer>
-      <span>FooterLink</span>
+      {path && <Link href={path}>{text}</Link>}
+      {icon}
     </S.FooterLinkContainer>
   )
 }
