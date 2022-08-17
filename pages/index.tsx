@@ -15,11 +15,16 @@ export default Home
 export const getStaticProps: GetStaticProps = async (context) => {
   let props: HomeData = {
     categorias: [],
+    posts: [],
+    projetos: [],
   }
 
   try {
-    const { categorias } = await getHomeProps()
+    const { categorias, posts, projetos } = await getHomeProps()
+
     props.categorias = categorias
+    props.posts = posts
+    props.projetos = projetos
   } catch (e) {
     console.log(e)
   }

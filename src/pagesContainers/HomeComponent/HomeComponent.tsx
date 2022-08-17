@@ -1,20 +1,16 @@
-import { useEffect } from 'react'
 import { TitleBar } from '../../components/TitleBar'
 import { PageBlock } from '../../components/PageBlock'
-import { getHomeProps } from '../../api/getHomeProps'
 import type { HomeComponentProps } from './HomeComponent.types'
 import * as S from './HomeComponent.styles'
 
-export function HomeComponent({ categorias }: HomeComponentProps) {
-  // useEffect(() => {
-  //   async function getData() {
-  //     const response = await getHomeProps()
-
-  //     console.log('RESPONSE!!!', response)
-  //   }
-
-  //   getData()
-  // }, [])
+export function HomeComponent({
+  categorias,
+  posts,
+  projetos,
+}: HomeComponentProps) {
+  console.log('categorias', categorias)
+  console.log('posts', posts)
+  console.log('projetos', projetos)
 
   return (
     <S.HomeComponentContainer>
