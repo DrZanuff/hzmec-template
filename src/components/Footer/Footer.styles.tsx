@@ -1,8 +1,8 @@
 import styled from 'styled-components'
+import { CollumnProps } from './Footer.types'
 
 export const FooterContainer = styled.div`
   display: flex;
-  border: 1px solid red;
   align-items: center;
   flex-direction: column;
   width: 100%;
@@ -11,29 +11,39 @@ export const FooterContainer = styled.div`
 `
 
 export const FooterInnerContent = styled.div`
-  border: 1px solid blue;
   max-width: 916px;
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: 32px 0px 32px;
 `
 
-export const CenterContainer = styled.div`
-  max-width: 247px;
-  padding: 10px;
-`
-export const CenteredText = styled.div`
-  text-align: center;
-  max-height: 35px;
+export const Collumm = styled.div<CollumnProps>`
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: fit-content;
+  max-width: ${({ maxWidth }) => (maxWidth ? maxWidth : 'unset')};
+  min-width: ${({ minWidth }) => (minWidth ? minWidth : 'unset')};
+
+  .centered-text {
+    text-align: center;
+    margin: 0px;
+  }
+
+  h3 {
+    margin: 0px;
+  }
+
+  #follow-us {
+    margin: 38px 0px 0px;
+    font-family: RobotoCondensed;
+  }
 `
 
-export const RightContainer = styled.div`
-  padding: 10px;
-  width: 288px;
-`
-
-export const LeftContainer = styled.div`
-  padding: 10px;
-  width: 288px;
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 13px;
 `
