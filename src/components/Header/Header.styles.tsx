@@ -7,6 +7,12 @@ export const HeaderContainer = styled.div`
 
   background: ${({ theme }) => theme.colors.DARK};
   box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+
+  /* @media (max-width: 1024px) {
+    position: fixed;
+    top: 0;
+  } */
 `
 
 export const HeaderInnerContent = styled.div`
@@ -25,13 +31,35 @@ export const HeaderTopContent = styled.div`
   svg {
     width: 265px;
   }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 22px;
+    padding: 16px;
+    margin-bottom: 6px;
+
+    svg {
+      width: 180px;
+    }
+  }
 `
+export const MenuInput = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+`
+
 export const HeaderBottomContent = styled.nav`
   display: flex;
   justify-content: center;
   margin: 22px 0px 14px;
 
-  ul {
+  @media (max-width: 1024px) {
+    display: none;
+  }
+
+  /* ul {
     display: flex;
     gap: 28px;
     flex-wrap: wrap;
@@ -82,5 +110,5 @@ export const HeaderBottomContent = styled.nav`
         background-color: ${({ theme }) => theme.colors.WHITE};
       }
     }
-  }
+  } */
 `

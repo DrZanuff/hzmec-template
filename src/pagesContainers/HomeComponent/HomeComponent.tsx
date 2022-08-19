@@ -15,9 +15,6 @@ export function HomeComponent({
 
   return (
     <S.HomeComponentContainer>
-      {/* {categorias?.map((categoria) => (
-        <span key={categoria.id}>{categoria.fields.nome}</span>
-      ))} */}
       <Header categorias={categorias} />
       <PageBlock gap={30} marginTop={20}>
         <TitleBar title="ULTIMOS POSTS" />
