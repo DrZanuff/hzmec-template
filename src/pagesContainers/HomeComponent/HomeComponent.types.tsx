@@ -1,6 +1,3 @@
-// import { ReactNode } from 'react'
+import { HomeData } from '../../../pageTypes/home.types'
 
-export interface HomeComponentProps {
-  value?: string
-  // Icon?: ReactNode
-}
+export interface HomeComponentProps extends HomeData {}
