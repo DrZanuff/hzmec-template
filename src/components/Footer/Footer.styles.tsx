@@ -64,6 +64,7 @@ export const FirstCollumn = styled(Collumm)`
     flex-direction: column;
     gap: 16px;
   }
+  
   @media (max-width: 1024px) {
     flex-direction: row;
     justify-content: space-between;
