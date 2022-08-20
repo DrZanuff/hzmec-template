@@ -9,12 +9,14 @@ export function Footer({ value }: FooterProps) {
   return (
     <S.FooterContainer>
       <S.FooterInnerContent>
-        <S.Collumm>
-          <FooterLink path="/" text="Institucional" />
-          <FooterLink path="/" text="Quem somos" />
-          <FooterLink path="/" text="Dados bancários" />
-          <FooterLink path="/" text="Sobre o SOS" />
-          <FooterLink path="/" text="Prazos" />
+        <S.FirstCollumn>
+          <div id="institutional">
+            <FooterLink path="/" text="Institucional" />
+            <FooterLink path="/" text="Quem somos" />
+            <FooterLink path="/" text="Dados bancários" />
+            <FooterLink path="/" text="Sobre o SOS" />
+            <FooterLink path="/" text="Prazos" />
+          </div>
           <div id="follow-us">
             <p>SIGA-NOS</p>
             <FooterLink
@@ -28,7 +30,7 @@ export function Footer({ value }: FooterProps) {
               icon={<Icons.WhatsappIcon />}
             />
           </div>
-        </S.Collumm>
+        </S.FirstCollumn>
         <S.Collumm maxWidth="247px">
           <h3>CONTATO</h3>
           Telefone: (61) 98213-2784
@@ -41,13 +43,14 @@ export function Footer({ value }: FooterProps) {
             alt="Mapa da HZMEC"
             width={247}
             height={148}
+            layout="responsive"
           />
           <p className="centered-text">
             ADE quadra 600 conjunto 02 lote 32 - Recanto das Emas, Brasília -
             DF, 72640-100
           </p>
         </S.Collumm>
-        <S.Collumm minWidth="288px">
+        <S.LastColumn minWidth="288px">
           <FooterLink path="/" text="Fale Conosco" />
           <FooterLink path="/" text="Dúvidas frequentes" />
           <TitleBar title="Formas de pagamento" />
@@ -57,7 +60,7 @@ export function Footer({ value }: FooterProps) {
             <Icons.EloIcon />
             <Icons.PixIcon />
           </S.Row>
-        </S.Collumm>
+        </S.LastColumn>
       </S.FooterInnerContent>
     </S.FooterContainer>
   )

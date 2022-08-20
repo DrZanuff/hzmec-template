@@ -17,6 +17,10 @@ export const FooterInnerContent = styled.div`
   flex-direction: row;
   justify-content: space-around;
   padding: 32px 0px 32px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `
 
 export const Collumm = styled.div<CollumnProps>`
@@ -39,6 +43,47 @@ export const Collumm = styled.div<CollumnProps>`
   #follow-us {
     margin: 38px 0px 0px;
     font-family: RobotoCondensed;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    max-width: unset;
+    padding: 0 29px;
+    img {
+      max-width: 350px;
+    }
+  }
+`
+
+export const FirstCollumn = styled(Collumm)`
+  #institutional {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 36px 34px 53px;
+    #institutional {
+      gap: 24px;
+    }
+    #follow-us {
+      margin: 0px;
+      p {
+        margin-top: 0px;
+      }
+    }
+  }
+`
+
+export const LastColumn = styled(Collumm)`
+  @media (max-width: 1024px) {
+    margin-top: 36px;
   }
 `
 
