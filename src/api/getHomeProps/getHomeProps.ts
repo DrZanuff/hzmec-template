@@ -1,6 +1,18 @@
+import { encode } from 'punycode'
 import { api } from '..'
 import { TABLE_ID_LIST } from '../tableID'
 import { GetCategoriaProps, GetPosts } from './'
+import { GetBanners } from './getHomeProps.types'
+
+async function getBanners() {
+  const bannersRoute =
+    TABLE_ID_LIST.BANNERS +
+    '?filterByFormula=' +
+    encodeURI('IF(ativo = TRUE(), 1, 0)')
+
+  const { data: responseBanners } = await api.get<GetBanners>(bannersRoute)
+  return responseBanners.records
+}
 
 async function getCategorias() {
   const categoryRoute = TABLE_ID_LIST.CATEGORIAS
@@ -54,10 +66,12 @@ export async function getHomeProps() {
   const categorias = await getCategorias()
   const posts = await getPosts()
   const projetos = await getProjects()
+  const banners = await getBanners()
 
   return {
     categorias,
     posts,
     projetos,
+    banners,
   }
 }

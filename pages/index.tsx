@@ -17,14 +17,16 @@ export const getStaticProps: GetStaticProps = async (context) => {
     categorias: [],
     posts: [],
     projetos: [],
+    banners: [],
   }
 
   try {
-    const { categorias, posts, projetos } = await getHomeProps()
+    const { categorias, posts, projetos, banners } = await getHomeProps()
 
     props.categorias = categorias
     props.posts = posts
     props.projetos = projetos
+    props.banners = banners
   } catch (e) {
     console.log(e)
   }

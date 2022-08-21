@@ -9,10 +9,12 @@ export function HomeComponent({
   categorias,
   posts,
   projetos,
+  banners,
 }: HomeComponentProps) {
   console.log('categorias', categorias)
   console.log('posts', posts)
   console.log('projetos', projetos)
+  console.log('banners', banners)
 
   return (
     <S.HomeComponentContainer>

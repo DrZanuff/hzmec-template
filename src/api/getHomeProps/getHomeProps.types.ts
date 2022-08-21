@@ -55,3 +55,19 @@ export interface Post extends Response {
 export interface GetPosts {
   records: Post[]
 }
+
+// ####### BANNERS ##########
+
+export interface Banner extends Response {
+  fields: {
+    nome: string
+    imagem: Image
+    texto: string
+    url: string
+    ativo: boolean
+  }
+}
+
+export interface GetBanners {
+  records: Banner[]
+}
