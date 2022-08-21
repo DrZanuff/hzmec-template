@@ -1,6 +1,7 @@
 import { api } from '..'
 import { TABLE_ID_LIST } from '../tableID'
 import { GetCategoriaProps, GetPosts } from './'
+import { getInstagramData } from '../instaFeed'
 
 async function getCategorias() {
   const categoryRoute = TABLE_ID_LIST.CATEGORIAS
@@ -54,10 +55,12 @@ export async function getHomeProps() {
   const categorias = await getCategorias()
   const posts = await getPosts()
   const projetos = await getProjects()
+  const instafeed = await getInstagramData()
 
   return {
     categorias,
     posts,
     projetos,
+    instafeed,
   }
 }

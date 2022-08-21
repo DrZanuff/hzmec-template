@@ -9,10 +9,12 @@ export function HomeComponent({
   categorias,
   posts,
   projetos,
+  instafeed,
 }: HomeComponentProps) {
   console.log('categorias', categorias)
   console.log('posts', posts)
   console.log('projetos', projetos)
+  console.log('instafeed', instafeed)
 
   return (
     <S.HomeComponentContainer>
