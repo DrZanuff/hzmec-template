@@ -1,4 +1,4 @@
-import { InstaGramPost } from './instaFeed.types'
+import { InstagramPost } from './instaFeed.types'
 // https://github.com/orsifrancesco/instagram-without-api-node
 const { iwa } = require('instagram-without-api-node')
 
@@ -25,7 +25,7 @@ export async function getInstagramData() {
     id: 'hzmec', // <!-- id is required
   })
 
-  const insgragramFeed = responseIwa as InstaGramPost[]
+  const insgragramFeed = responseIwa as InstagramPost[]
 
   return insgragramFeed
 }
