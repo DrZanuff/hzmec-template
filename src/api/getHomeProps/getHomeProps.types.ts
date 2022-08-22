@@ -52,6 +52,22 @@ export interface Post extends Response {
   }
 }
 
-export interface GetPosts {
+export interface GetPostsProps {
   records: Post[]
+}
+
+// ####### BANNERS ##########
+
+export interface Banner extends Response {
+  fields: {
+    nome: string
+    imagem: Image
+    texto: string
+    url: string
+    ativo: boolean
+  }
+}
+
+export interface GetBannersProps {
+  records: Banner[]
 }

@@ -4,7 +4,9 @@ import {
   GetCategoriaProps,
   Post,
   GetPosts,
+  Banner,
+  GetBanners,
 } from './getHomeProps.types'
 
 export { getHomeProps }
-export type { Categoria, GetCategoriaProps, Post, GetPosts }
+export type { Categoria, GetCategoriaProps, Post, GetPosts, Banner, GetBanners }

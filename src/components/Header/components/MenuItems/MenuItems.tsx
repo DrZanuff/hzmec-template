@@ -1,6 +1,7 @@
 import { useMemo, useEffect, useState } from 'react'
 import Link from 'next/link'
 import Router from 'next/router'
+import { v4 } from 'uuid'
 import { generateCategories } from '../../helpers/generateCategories'
 import type { MenuItemsProps } from './MenuItems.types'
 import * as S from './MenuItems.styles'
@@ -20,7 +21,7 @@ export function MenuItems({ categorias }: MenuItemsProps) {
     <S.MenuItemsContainer>
       {categories.map((categorie) => (
         <li
-          key={categorie.url}
+          key={v4()}
           id={`${categorie.isActive && 'current'}`}
           className={`${categorie.isButton && 'is-button'}`}
         >
