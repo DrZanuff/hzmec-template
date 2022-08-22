@@ -6,9 +6,7 @@ import { GetBanners } from './getHomeProps.types'
 
 async function getBanners() {
   const bannersRoute =
-    TABLE_ID_LIST.BANNERS +
-    '?filterByFormula=' +
-    encodeURI('IF(ativo = TRUE(), 1, 0)')
+    TABLE_ID_LIST.BANNERS + '?filterByFormula=' + encodeURI('ativo=TRUE()')
 
   const { data: responseBanners } = await api.get<GetBanners>(bannersRoute)
   return responseBanners.records
