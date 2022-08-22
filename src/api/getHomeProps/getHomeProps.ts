@@ -1,14 +1,17 @@
-import { encode } from 'punycode'
 import { api } from '..'
 import { TABLE_ID_LIST } from '../tableID'
-import { GetCategoriaProps, GetPosts } from './'
-import { GetBanners } from './getHomeProps.types'
+import { getInstagramData } from '../instaFeed'
+import type {
+  GetBannersProps,
+  GetCategoriaProps,
+  GetPostsProps,
+} from './getHomeProps.types'
 
 async function getBanners() {
   const bannersRoute =
     TABLE_ID_LIST.BANNERS + '?filterByFormula=' + encodeURI('ativo=TRUE()')
 
-  const { data: responseBanners } = await api.get<GetBanners>(bannersRoute)
+  const { data: responseBanners } = await api.get<GetBannersProps>(bannersRoute)
   return responseBanners.records
 }
 
@@ -26,7 +29,7 @@ async function getPosts() {
     '?filterByFormula=' +
     encodeURI('AND(destaque=TRUE(),tags!="Projeto")&maxRecords=6')
 
-  const { data: hilightedPosts } = await api.get<GetPosts>(
+  const { data: hilightedPosts } = await api.get<GetPostsProps>(
     highlightedPostsRoute
   )
 
@@ -35,7 +38,7 @@ async function getPosts() {
     '?filterByFormula=' +
     encodeURI('AND(destaque!=TRUE(),tags!="Projeto")')
 
-  const { data: posts } = await api.get<GetPosts>(postsRoute)
+  const { data: posts } = await api.get<GetPostsProps>(postsRoute)
 
   return [...hilightedPosts.records, ...posts.records].slice(0, 6)
 }
@@ -46,7 +49,7 @@ async function getProjects() {
     '?filterByFormula=' +
     encodeURI('AND(destaque=TRUE(),tags="Projeto")&maxRecords=6')
 
-  const { data: hilightedProjects } = await api.get<GetPosts>(
+  const { data: hilightedProjects } = await api.get<GetPostsProps>(
     highlightedProjectsRoute
   )
 
@@ -55,7 +58,7 @@ async function getProjects() {
     '?filterByFormula=' +
     encodeURI('AND(destaque!=TRUE(),tags="Projeto")&maxRecords=6')
 
-  const { data: projects } = await api.get<GetPosts>(projectsRoute)
+  const { data: projects } = await api.get<GetPostsProps>(projectsRoute)
 
   return [...hilightedProjects.records, ...projects.records].slice(0, 6)
 }
@@ -64,12 +67,14 @@ export async function getHomeProps() {
   const categorias = await getCategorias()
   const posts = await getPosts()
   const projetos = await getProjects()
+  const instafeed = await getInstagramData()
   const banners = await getBanners()
 
   return {
     categorias,
     posts,
     projetos,
+    instafeed,
     banners,
   }
 }

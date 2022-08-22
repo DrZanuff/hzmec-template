@@ -52,7 +52,7 @@ export interface Post extends Response {
   }
 }
 
-export interface GetPosts {
+export interface GetPostsProps {
   records: Post[]
 }
 
@@ -68,6 +68,6 @@ export interface Banner extends Response {
   }
 }
 
-export interface GetBanners {
+export interface GetBannersProps {
   records: Banner[]
 }
