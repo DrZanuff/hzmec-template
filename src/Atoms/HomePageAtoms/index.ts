@@ -1,3 +1,15 @@
-import { categoriaContext } from './HomePageAtoms'
+import {
+  categoriaContext,
+  bannerContext,
+  postContext,
+  instagramPostContext,
+  projetoContext,
+} from './HomePageAtoms'
 
-export { categoriaContext }
+export {
+  categoriaContext,
+  bannerContext,
+  postContext,
+  instagramPostContext,
+  projetoContext,
+}

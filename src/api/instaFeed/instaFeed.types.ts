@@ -1,4 +1,4 @@
-export interface InstaGramPost {
+export interface InstagramPost {
   id: string
   time: number
   imageUrl: string
