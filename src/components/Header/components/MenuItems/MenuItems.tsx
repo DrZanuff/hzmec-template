@@ -1,12 +1,14 @@
 import { useMemo, useEffect, useState } from 'react'
 import Link from 'next/link'
+import { useRecoilValue } from 'recoil'
+import { categoriaContext } from '../../../../Atoms/HomePageAtoms'
 import Router from 'next/router'
 import { v4 } from 'uuid'
 import { generateCategories } from '../../helpers/generateCategories'
-import type { MenuItemsProps } from './MenuItems.types'
 import * as S from './MenuItems.styles'
 
-export function MenuItems({ categorias }: MenuItemsProps) {
+export function MenuItems() {
+  const categorias = useRecoilValue(categoriaContext)
   const [path, setPath] = useState('/')
 
   useEffect(() => {
