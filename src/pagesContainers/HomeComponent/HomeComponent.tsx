@@ -10,11 +10,11 @@ import {
   instagramPostContext,
   projetoContext,
 } from '../../Atoms/HomePageAtoms'
-import { EmblaExample } from '../../components/EmblaExample'
 import { EmblaBannerExample } from '../../components/EmblaBannerExample'
 import type { HomeComponentProps } from './HomeComponent.types'
 import * as S from './HomeComponent.styles'
 import { Header } from '../../components/Header'
+import { Instafeed } from '../../components/Instafeed'
 
 export function HomeComponent({
   categorias,
@@ -51,7 +51,8 @@ export function HomeComponent({
         <TitleBar title="ULTIMOS POSTS" />
         <TitleBar title="ULTIMOS POSTS" url="/" />
         <EmblaBannerExample />
-        <EmblaExample />
+        <TitleBar title="NOSSO INSTAGRAM" subTItle="@HZMEC" />
+        <Instafeed />
       </PageBlock>
       <Footer></Footer>
     </S.HomeComponentContainer>
