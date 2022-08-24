@@ -28,6 +28,8 @@ export const InstafeedContainer = styled.div`
       }
 
       @media (max-width: 1024px) {
+        top: 110px;
+
         &.embla__prev {
           left: -30px;
         }
@@ -48,10 +50,18 @@ export const InstafeedContainer = styled.div`
     overflow: hidden;
     width: 100%;
     height: 215px;
+
+    @media (max-width: 1024px) {
+      height: 100%;
+    }
   }
 
   .embla__container {
     display: flex;
+
+    @media (max-width: 1024px) {
+      height: 100%;
+    }
   }
   .embla__slide {
     flex: 0 0 25%;
@@ -61,15 +71,30 @@ export const InstafeedContainer = styled.div`
 
     @media (max-width: 1024px) {
       flex: 0 0 100%;
+      height: 100%;
     }
 
     a {
       display: flex;
+
       width: 100%;
       max-width: 208px;
       border-radius: 4px;
       filter: drop-shadow(0px 3px 2px rgba(0, 0, 0, 0.5));
       overflow: hidden;
+
+      @media (max-width: 1024px) {
+        max-width: 100%;
+        height: 95%;
+        justify-content: center;
+      }
+
+      @media (max-width: 1024px) {
+        span {
+          width: 100% !important;
+          height: 100% !important;
+        }
+      }
 
       img {
         display: flex;
@@ -78,6 +103,10 @@ export const InstafeedContainer = styled.div`
         aspect-ratio: 1 / 1;
         max-width: 208px;
         transition: filter 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+        @media (max-width: 1024px) {
+          max-width: 100%;
+        }
 
         &:hover {
           filter: brightness(0.9);
