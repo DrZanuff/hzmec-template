@@ -10,6 +10,8 @@ import {
   instagramPostContext,
   projetoContext,
 } from '../../Atoms/HomePageAtoms'
+import { EmblaExample } from '../../components/EmblaExample'
+import { EmblaBannerExample } from '../../components/EmblaBannerExample'
 import type { HomeComponentProps } from './HomeComponent.types'
 import * as S from './HomeComponent.styles'
 import { Header } from '../../components/Header'
@@ -48,6 +50,8 @@ export function HomeComponent({
       <PageBlock gap={30} marginTop={20}>
         <TitleBar title="ULTIMOS POSTS" />
         <TitleBar title="ULTIMOS POSTS" url="/" />
+        <EmblaBannerExample />
+        <EmblaExample />
       </PageBlock>
       <Footer></Footer>
     </S.HomeComponentContainer>

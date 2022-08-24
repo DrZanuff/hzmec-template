@@ -6,6 +6,7 @@ import { EloIcon } from './Elo'
 import { PixIcon } from './Pix'
 import { MobileMenuOpen } from './MobileMenuOpen'
 import { MobileMenuClose } from './MobileMenuClose'
+import { CarouselArrowLeft, CarouselArrowRight } from './CarouselArrows'
 
 export {
   InstagramIcon,
@@ -16,4 +17,6 @@ export {
   PixIcon,
   MobileMenuOpen,
   MobileMenuClose,
+  CarouselArrowLeft,
+  CarouselArrowRight,
 }
