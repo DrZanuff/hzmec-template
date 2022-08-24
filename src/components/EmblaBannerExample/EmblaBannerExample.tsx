@@ -1,10 +1,10 @@
 import { useCallback } from 'react'
 import { CarouselArrowLeft, CarouselArrowRight } from '../../Icons'
-import type { EmblaExampleProps } from './EmblaExample.types'
+import type { EmblaBannerExampleProps } from './EmblaBannerExample.types'
 import useEmblaCarousel from 'embla-carousel-react'
-import * as S from './EmblaExample.styles'
+import * as S from './EmblaBannerExample.styles'
 
-export function EmblaExample({ value }: EmblaExampleProps) {
+export function EmblaBannerExample({ value }: EmblaBannerExampleProps) {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: 'start',
@@ -23,7 +23,7 @@ export function EmblaExample({ value }: EmblaExampleProps) {
   }, [emblaApi])
 
   return (
-    <S.EmblaExampleContainer>
+    <S.EmblaBannerExampleContainer>
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
@@ -41,6 +41,6 @@ export function EmblaExample({ value }: EmblaExampleProps) {
           <CarouselArrowRight />
         </button>
       </div>
-    </S.EmblaExampleContainer>
+    </S.EmblaBannerExampleContainer>
   )
 }

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const EmblaExampleContainer = styled.div`
+export const EmblaBannerExampleContainer = styled.div`
   display: flex;
 
   .embla {
@@ -53,13 +53,9 @@ export const EmblaExampleContainer = styled.div`
     display: flex;
   }
   .embla__slide {
-    flex: 0 0 25%;
+    flex: 0 0 100%;
     border: 2px solid red;
     height: 200px;
     padding-left: 10px;
-
-    @media (max-width: 1024px) {
-      flex: 0 0 100%;
-    }
   }
 `
