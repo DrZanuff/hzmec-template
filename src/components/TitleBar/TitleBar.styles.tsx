@@ -10,15 +10,6 @@ export const TitleBarContainer = styled.div`
   justify-content: space-between;
   position: relative;
 
-  h2 {
-    margin: 0;
-    padding: 6px 12px;
-    color: ${({ theme }) => theme.colors.WHITE};
-    font-family: RobotoCondensed;
-    font-weight: bold;
-    font-size: 18px;
-  }
-
   a {
     margin: 0;
     padding: 10px 18px;
@@ -32,5 +23,28 @@ export const TitleBarContainer = styled.div`
       filter: brightness(0.7);
       text-decoration: underline;
     }
+  }
+`
+
+export const Title = styled.div`
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px 12px;
+
+  h2 {
+    margin: 0;
+    color: ${({ theme }) => theme.colors.WHITE};
+    font-family: RobotoCondensed;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  h3 {
+    margin: 0;
+    color: ${({ theme }) => theme.colors.WHITE};
+    font-family: RobotoCondensed-Normal;
+    font-weight: normal;
+    font-size: 18px;
   }
 `

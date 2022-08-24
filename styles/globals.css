@@ -46,7 +46,7 @@ a {
 }
 
 @font-face {
-  font-family: RobotoCondensed;
+  font-family: RobotoCondensed-Normal;
   src: local(RobotoCondensed),
     url(../public/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf)
       format('truetype');

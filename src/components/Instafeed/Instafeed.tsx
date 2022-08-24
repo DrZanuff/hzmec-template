@@ -1,10 +1,14 @@
 import { useCallback } from 'react'
+import { instagramPostContext } from '../../Atoms/HomePageAtoms'
+import Image from 'next/image'
+import { useRecoilValue } from 'recoil'
 import { CarouselArrowLeft, CarouselArrowRight } from '../../Icons'
-import type { EmblaExampleProps } from './EmblaExample.types'
 import useEmblaCarousel from 'embla-carousel-react'
-import * as S from './EmblaExample.styles'
+import * as S from './Instafeed.styles'
 
-export function EmblaExample({ value }: EmblaExampleProps) {
+export function Instafeed() {
+  const instagramPosts = useRecoilValue(instagramPostContext)
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: 'start',
@@ -18,16 +22,27 @@ export function EmblaExample({ value }: EmblaExampleProps) {
     if (emblaApi) emblaApi.scrollNext()
   }, [emblaApi])
 
+  if (instagramPosts.length === 0) {
+    return null
+  }
+
   return (
-    <S.EmblaExampleContainer>
+    <S.InstafeedContainer>
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
-            <div className="embla__slide">Slide 1</div>
-            <div className="embla__slide">Slide 2</div>
-            <div className="embla__slide">Slide 3</div>
-            <div className="embla__slide">Slide 4</div>
-            <div className="embla__slide">Slide 5</div>
+            {instagramPosts.map((post, index) => (
+              <div key={index} className="embla__slide">
+                <a href={post.link} target="_blank" rel="noreferrer">
+                  <Image
+                    src={`data:image/jpg;base64, ${post.image}`}
+                    alt={post.text}
+                    width={205}
+                    height={205}
+                  />
+                </a>
+              </div>
+            ))}
           </div>
         </div>
         <button className="embla__prev" onClick={scrollPrev}>
@@ -37,6 +52,6 @@ export function EmblaExample({ value }: EmblaExampleProps) {
           <CarouselArrowRight />
         </button>
       </div>
-    </S.EmblaExampleContainer>
+    </S.InstafeedContainer>
   )
 }
