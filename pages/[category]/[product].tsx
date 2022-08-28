@@ -2,7 +2,7 @@ import { getPagesProps } from '../../src/api/getPagesProps'
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
 import type { PageData } from '../../pageTypes/pages.types'
 
-const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
+const Product: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   props
 ) => {
   console.log('PROPS PARAMS', props)
@@ -15,7 +15,7 @@ const Page: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   )
 }
 
-export default Page
+export default Product
 
 export async function getStaticPaths() {
   let props: PageData = {
@@ -38,8 +38,8 @@ export async function getStaticPaths() {
 
   return {
     paths: [
-      { params: { categorie: 'som', page: 'alto' } },
-      { params: { categorie: 'bolsas', page: 'de-ar' } },
+      { params: { category: 'som', page: 'alto' } },
+      { params: { category: 'bolsas', page: 'de-ar' } },
     ],
     fallback: false, // can also be true or 'blocking'
   }
