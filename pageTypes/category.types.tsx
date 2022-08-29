@@ -4,7 +4,7 @@ export interface CategoryData {
   categorias: Categoria[]
 }
 
-export interface ProductData {
-  categorias: Categoria[]
-  produtos: Produto[]
+export interface ProductListData {
+  category: string
+  products: Produto[]
 }

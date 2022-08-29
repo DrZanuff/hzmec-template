@@ -1,10 +1,6 @@
 import { api } from '..'
 import { TABLE_ID_LIST } from '../tableID'
-import type {
-  GetCategoriaProps,
-  GetPostsProps,
-  GetProdutosProps,
-} from '../getHomeProps/getHomeProps.types'
+import type { GetCategoriaProps } from '../getHomeProps/getHomeProps.types'
 
 async function getCategorias() {
   const categoriasRoute =
@@ -16,22 +12,22 @@ async function getCategorias() {
   return responseCategorias.records
 }
 
-async function getProdutos() {
-  const produtosRoute =
-    TABLE_ID_LIST.PRODUTOS + '?filterByFormula=' + encodeURI('ativo=TRUE()')
+export async function getCategoryName(slug: string) {
+  const categoriaRoute =
+    TABLE_ID_LIST.CATEGORIAS +
+    '?filterByFormula=' +
+    encodeURI(`AND(ativo=TRUE(),slug="${slug}")`)
 
-  const { data: responseProdustos } = await api.get<GetProdutosProps>(
-    produtosRoute
+  const { data: responseCategoria } = await api.get<GetCategoriaProps>(
+    categoriaRoute
   )
-  return responseProdustos.records
+  return responseCategoria.records[0]
 }
 
 export async function getCategoryProps() {
   const categorias = await getCategorias()
-  const produtos = await getProdutos()
 
   return {
     categorias,
-    produtos,
   }
 }

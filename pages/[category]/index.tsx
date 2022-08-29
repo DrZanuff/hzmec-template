@@ -1,15 +1,31 @@
+import { useMemo } from 'react'
 import { getCategoryProps } from '../../src/api/getCategoryProps'
+import { getCategoryName } from '../../src/api/getCategoryProps/getCategoryProps'
+import { getProductProps } from '../../src/api/getProductsProps '
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next'
-import type { CategoryData } from '../../pageTypes/category.types'
+import type {
+  CategoryData,
+  ProductListData,
+} from '../../pageTypes/category.types'
+import { Produto } from '../../src/api/getHomeProps'
 
 const Category: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   props
 ) => {
   console.log('PROPS PARAMS', props)
 
+  const productList = useMemo(() => {
+    return props as ProductListData
+  }, [props])
+
   return (
     <div>
-      <h1>Categorie {props.categorie}</h1>
+      <h1>Categoria {productList.category}</h1>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        {productList.products.map((produto, index) => (
+          <span key={index}>{produto.fields.nome}</span>
+        ))}
+      </div>
     </div>
   )
 }
@@ -37,20 +53,29 @@ export async function getStaticPaths() {
         params: { category: path },
       }
     }),
-    // paths: [
-    //   { params: { categorie: 'som' } },
-    //   { params: { categorie: 'bolsas' } },
-    // ],
     fallback: false, // can also be true or 'blocking'
   }
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  context.params
+  let categoryName = ''
+  let productList: Produto[] = []
+
+  try {
+    const { produtos } = await getProductProps(String(context.params?.category))
+    productList = produtos
+
+    const category = await getCategoryName(String(context.params?.category))
+    categoryName = category.fields.nome
+  } catch (e) {
+    console.log(e)
+  }
+
   return {
     // Passed to the page component as props
     props: {
-      categorie: context.params?.category,
+      category: categoryName,
+      products: productList,
     },
   }
 }
