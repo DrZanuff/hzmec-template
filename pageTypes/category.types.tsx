@@ -1,10 +1,11 @@
 import type { Produto, Categoria } from '../src/api/getHomeProps'
 
-export interface CategoryData {
+export interface CategoryPaths {
   categorias: Categoria[]
 }
 
-export interface ProductListData {
-  category: string
+export interface CategoryData {
+  categoryName: string
+  categorySlug: string
   products: Produto[]
 }

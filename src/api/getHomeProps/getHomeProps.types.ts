@@ -36,6 +36,7 @@ export interface Produto extends Response {
     slug: string
     valor: number
     parcela?: string
+    slugCategoria: string[]
   }
 }
 
