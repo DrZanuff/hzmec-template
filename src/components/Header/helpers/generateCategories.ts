@@ -2,7 +2,7 @@ import { Categoria } from '../../../api/getHomeProps/getHomeProps.types'
 
 interface GeneratedCategories {
   name: string
-  url: string
+  slug: string
   isButton: boolean
   isActive: boolean
 }
@@ -14,7 +14,7 @@ export function generateCategories(
   const generatedCategories: Array<GeneratedCategories> = [
     {
       name: 'Home',
-      url: '/',
+      slug: '/',
       isButton: false,
       isActive: currentPath === '/',
     },
@@ -24,7 +24,7 @@ export function generateCategories(
     if (index === categories.length - 1) {
       generatedCategories.push({
         name: 'Socorro',
-        url: '/',
+        slug: '/',
         isButton: true,
         isActive: currentPath === '/sos',
       })
@@ -33,7 +33,7 @@ export function generateCategories(
     if (categorie.fields.ativo && categorie.fields.menu) {
       generatedCategories.push({
         name: categorie.fields.nome,
-        url: categorie.fields.slug,
+        slug: categorie.fields.slug,
         isButton: false,
         isActive: currentPath === categorie.fields.slug,
       })

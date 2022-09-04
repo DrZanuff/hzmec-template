@@ -27,7 +27,7 @@ export function MenuItems() {
           id={`${categorie.isActive && 'current'}`}
           className={`${categorie.isButton && 'is-button'}`}
         >
-          <Link href={categorie.url}>{categorie.name}</Link>
+          <Link href={categorie.slug}>{categorie.name}</Link>
         </li>
       ))}
     </S.MenuItemsContainer>

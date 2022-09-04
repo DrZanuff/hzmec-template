@@ -1,18 +1,24 @@
-import { useCallback } from 'react'
+import { useCallback, useRef } from 'react'
 import { instagramPostContext } from '../../Atoms/HomePageAtoms'
 import Image from 'next/image'
 import { useRecoilValue } from 'recoil'
 import { CarouselArrowLeft, CarouselArrowRight } from '../../Icons'
 import useEmblaCarousel from 'embla-carousel-react'
+import Autoplay from 'embla-carousel-autoplay'
 import * as S from './Instafeed.styles'
 
 export function Instafeed() {
   const instagramPosts = useRecoilValue(instagramPostContext)
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: true,
-    align: 'start',
-  })
+  const autoplay = useRef(Autoplay({ delay: 3000, stopOnInteraction: false }))
+
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: 'start',
+    },
+    [autoplay.current]
+  )
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()

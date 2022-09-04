@@ -3,10 +3,21 @@ import {
   Categoria,
   GetCategoriaProps,
   Post,
-  GetPosts,
+  GetPostsProps,
   Banner,
-  GetBanners,
+  GetBannersProps,
+  Produto,
+  GetProdutosProps,
 } from './getHomeProps.types'
 
 export { getHomeProps }
-export type { Categoria, GetCategoriaProps, Post, GetPosts, Banner, GetBanners }
+export type {
+  Categoria,
+  GetCategoriaProps,
+  Post,
+  GetPostsProps,
+  Banner,
+  GetBannersProps,
+  Produto,
+  GetProdutosProps,
+}

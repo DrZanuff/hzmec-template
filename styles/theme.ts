@@ -5,6 +5,7 @@ const theme = {
     BACKGROUND: '#1A2027',
     WHITE: '#FFFFFF',
     YELLOW: '#FFDB06',
+    RED: '#FF0000',
   },
   DESKTOP: '915px',
 }
