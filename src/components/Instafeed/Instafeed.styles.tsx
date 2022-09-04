@@ -6,9 +6,10 @@ export const InstafeedContainer = styled.div`
   .embla {
     position: relative;
     width: 100%;
+    margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 0px;
     height: 265px;
 
     button {

@@ -27,7 +27,9 @@ async function getPosts() {
   const highlightedPostsRoute =
     TABLE_ID_LIST.POSTS +
     '?filterByFormula=' +
-    encodeURI('AND(destaque=TRUE(),tags!="Projeto")&maxRecords=6')
+    encodeURI(
+      'AND(destaque=TRUE(),SEARCH("Projeto",tags)=0,ativo=TRUE())&maxRecords=4'
+    )
 
   const { data: hilightedPosts } = await api.get<GetPostsProps>(
     highlightedPostsRoute
@@ -36,18 +38,22 @@ async function getPosts() {
   const postsRoute =
     TABLE_ID_LIST.POSTS +
     '?filterByFormula=' +
-    encodeURI('AND(destaque!=TRUE(),tags!="Projeto")')
+    encodeURI(
+      'AND(destaque!=TRUE(),SEARCH("Projeto",tags)=0,ativo=TRUE())&maxRecords=4'
+    )
 
   const { data: posts } = await api.get<GetPostsProps>(postsRoute)
 
-  return [...hilightedPosts.records, ...posts.records].slice(0, 6)
+  return [...hilightedPosts.records, ...posts.records].slice(0, 4)
 }
 
 async function getProjects() {
   const highlightedProjectsRoute =
     TABLE_ID_LIST.POSTS +
     '?filterByFormula=' +
-    encodeURI('AND(destaque=TRUE(),tags="Projeto")&maxRecords=6')
+    encodeURI(
+      'AND(destaque=TRUE(),SEARCH("Projeto",tags)>0,ativo=TRUE())&maxRecords=4'
+    )
 
   const { data: hilightedProjects } = await api.get<GetPostsProps>(
     highlightedProjectsRoute
@@ -56,11 +62,13 @@ async function getProjects() {
   const projectsRoute =
     TABLE_ID_LIST.POSTS +
     '?filterByFormula=' +
-    encodeURI('AND(destaque!=TRUE(),tags="Projeto")&maxRecords=6')
+    encodeURI(
+      'AND(destaque!=TRUE(),SEARCH("Projeto",tags)>0,ativo=TRUE())&maxRecords=4'
+    )
 
   const { data: projects } = await api.get<GetPostsProps>(projectsRoute)
 
-  return [...hilightedProjects.records, ...projects.records].slice(0, 6)
+  return [...hilightedProjects.records, ...projects.records].slice(0, 4)
 }
 
 export async function getHomeProps() {

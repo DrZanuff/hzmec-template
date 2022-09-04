@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  images: {
+    domains: ['dl.airtable.com'],
+  },
   reactStrictMode: true,
   compiler: {
     styledComponents: true,
@@ -7,8 +10,8 @@ module.exports = {
   rewrites: async () => {
     return [
       {
-        source: "/rewrite",
-        destination: "/",
+        source: '/rewrite',
+        destination: '/',
       },
     ]
   },
