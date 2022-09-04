@@ -10,7 +10,8 @@ import {
   instagramPostContext,
   projetoContext,
 } from '../../Atoms/HomePageAtoms'
-import { EmblaBannerExample } from '../../components/EmblaBannerExample'
+// import { EmblaBannerExample } from '../../components/EmblaBannerExample'
+import { PostComponent } from '../../components/PostComponent'
 import type { HomeComponentProps } from './HomeComponent.types'
 import * as S from './HomeComponent.styles'
 import { Header } from '../../components/Header'
@@ -47,12 +48,36 @@ export function HomeComponent({
   return (
     <S.HomeComponentContainer>
       <Header />
-      <PageBlock gap={30} marginTop={20}>
-        <TitleBar title="ULTIMOS POSTS" />
+      <PageBlock gap={0} marginTop={20}>
         <TitleBar title="ULTIMOS POSTS" url="/" />
-        <EmblaBannerExample />
+        <S.PostsContainer>
+          {posts.map((post, index) => (
+            <PostComponent
+              key={index}
+              image={post.fields.imagem?.[0]?.url}
+              title={post.fields.titulo}
+              text={post.fields.texto}
+              url={`/posts/${post.fields.slug}`}
+              compact
+            />
+          ))}
+        </S.PostsContainer>
         <TitleBar title="NOSSO INSTAGRAM" subTItle="@HZMEC" />
         <Instafeed />
+        <TitleBar title="PROJETOS CONCLUIDOS" url="/" />
+        <S.PostsContainer>
+          {projetos.map((projetos, index) => (
+            <PostComponent
+              key={index}
+              image={projetos.fields.imagem?.[0]?.url}
+              title={projetos.fields.titulo}
+              text={projetos.fields.texto}
+              url={`/posts/${projetos.fields.slug}`}
+              compact
+            />
+          ))}
+        </S.PostsContainer>
+        {/* <EmblaBannerExample /> */}
       </PageBlock>
       <Footer></Footer>
     </S.HomeComponentContainer>
