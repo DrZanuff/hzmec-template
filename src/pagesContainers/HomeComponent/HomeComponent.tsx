@@ -10,7 +10,7 @@ import {
   instagramPostContext,
   projetoContext,
 } from '../../Atoms/HomePageAtoms'
-// import { EmblaBannerExample } from '../../components/EmblaBannerExample'
+import { MainBanner } from '../../components/MainBanner'
 import { PostComponent } from '../../components/PostComponent'
 import type { HomeComponentProps } from './HomeComponent.types'
 import * as S from './HomeComponent.styles'
@@ -48,6 +48,7 @@ export function HomeComponent({
   return (
     <S.HomeComponentContainer>
       <Header />
+      <MainBanner />
       <PageBlock gap={0} marginTop={20}>
         <TitleBar title="ULTIMOS POSTS" url="/" />
         <S.PostsContainer>
@@ -77,9 +78,8 @@ export function HomeComponent({
             />
           ))}
         </S.PostsContainer>
-        {/* <EmblaBannerExample /> */}
       </PageBlock>
-      <Footer></Footer>
+      <Footer />
     </S.HomeComponentContainer>
   )
 }

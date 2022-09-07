@@ -85,7 +85,8 @@ export interface GetPostsProps {
 export interface Banner extends Response {
   fields: {
     nome: string
-    imagem: Image
+    titulo: string
+    imagem: Image[]
     texto: string
     url: string
     ativo: boolean
