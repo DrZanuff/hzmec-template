@@ -15,7 +15,7 @@ export function PostComponent({
 }: PostComponentProps) {
   const fomatedTitle = useMemo(() => {
     if (compact) {
-      return title?.length < 20 ? title : title?.substring(0, 17) + '...'
+      return title?.length < 40 ? title : title?.substring(0, 37) + '...'
     }
 
     return title?.length < 50 ? title : title?.substring(0, 47) + '...'
@@ -23,7 +23,7 @@ export function PostComponent({
 
   const summary = useMemo(() => {
     if (compact) {
-      return text?.length < 200 ? text : text?.substring(0, 200)
+      return text?.length < 250 ? text : text?.substring(0, 250)
     }
 
     return text?.length < 750 ? text : text?.substring(0, 750)
