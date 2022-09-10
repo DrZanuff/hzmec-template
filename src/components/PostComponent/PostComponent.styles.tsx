@@ -54,7 +54,11 @@ export const PostContent = styled.div<PostComponentBaseProps>`
   display: flex;
   flex-direction: column;
 
-  gap: ${({ compact }) => (compact === true ? 15 : 13)}px;
+  gap: ${({ compact }) => (compact === true ? 8 : 6)}px;
+
+  @media (max-width: 1024px) {
+    gap: 10px;
+  }
 
   h3 {
     font-family: Roboto;
@@ -69,8 +73,14 @@ export const PostContent = styled.div<PostComponentBaseProps>`
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+
+    /* @media (max-width: 1024px) {
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+    } */
   }
 
   p {
@@ -79,8 +89,8 @@ export const PostContent = styled.div<PostComponentBaseProps>`
     font-family: RobotoCondensed-Light;
     font-style: normal;
     font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 14px;
+    line-height: 16px;
     text-align: justify;
 
     color: ${({ theme }) => theme.colors.BLACK};
@@ -102,9 +112,8 @@ export const PostContent = styled.div<PostComponentBaseProps>`
           `}
 
     @media (max-width: 1024px) {
-      gap: 8px;
-      -webkit-line-clamp: 7;
-      line-clamp: 7;
+      -webkit-line-clamp: 5;
+      line-clamp: 5;
     }
   }
 `

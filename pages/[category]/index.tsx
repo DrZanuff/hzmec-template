@@ -91,5 +91,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
       categorySlug: String(context.params?.category),
       products: productList,
     } as CategoryData,
+    revalidate: 60 * 30, // 30 minutos
   }
 }

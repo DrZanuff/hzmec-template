@@ -11,13 +11,14 @@ import * as S from './MainBanner.styles'
 export function MainBanner({ value }: MainBannerProps) {
   const banners = useRecoilValue(bannerContext)
 
-  const autoplay = useRef(Autoplay({ delay: 5000, stopOnInteraction: false }))
+  const autoplay = useRef(Autoplay({ delay: 9000, stopOnInteraction: true }))
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
       align: 'start',
       draggable: true,
+      speed: 7,
     },
     [autoplay.current]
   )
