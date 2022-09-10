@@ -11,17 +11,24 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "embla-carousel-autoplay": "^7.0.1",
+    "embla-carousel-react": "^7.0.1",
+    "instagram-without-api-node": "^1.0.8",
     "next": "12.2.4",
+    "nextjs-progressbar": "^0.0.14",
     "plop": "^3.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "styled-components": "^5.3.5"
+    "recoil": "^0.7.5",
+    "styled-components": "^5.3.5",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/node": "18.7.1",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "^5.1.26",
+    "@types/uuid": "^8.3.4",
     "babel-plugin-styled-components": "^2.0.7",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.4",

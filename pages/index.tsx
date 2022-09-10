@@ -17,19 +17,25 @@ export const getStaticProps: GetStaticProps = async (context) => {
     categorias: [],
     posts: [],
     projetos: [],
+    instafeed: [],
+    banners: [],
   }
 
   try {
-    const { categorias, posts, projetos } = await getHomeProps()
+    const { categorias, posts, projetos, instafeed, banners } =
+      await getHomeProps()
 
     props.categorias = categorias
     props.posts = posts
     props.projetos = projetos
+    props.instafeed = instafeed
+    props.banners = banners
   } catch (e) {
     console.log(e)
   }
 
   return {
     props,
+    revalidate: 60 * 30, // 30 minutos
   }
 }

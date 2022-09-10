@@ -10,4 +10,8 @@ export const PageBlockContainer = styled.div<PageBlockContainerProps>`
   margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}px` : '0px')};
   margin-bottom: ${({ marginBottom }) =>
     marginBottom ? `${marginBottom}px` : '0px'};
+
+  @media (max-width: 1024px) {
+    padding: 0 10px;
+  }
 `
