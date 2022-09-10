@@ -98,5 +98,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
       categoryName,
       product: produto[0],
     },
+    revalidate: 60 * 30, // 30 minutos
   }
 }
